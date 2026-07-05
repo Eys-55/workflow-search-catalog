@@ -2,6 +2,7 @@
   "name": "workflow-search-catalog",
   "version": "0.1.0",
   "description": "Search real-world workflow patterns and turn vague ideas into ECC mini-contracts.",
+  "type": "commonjs",
   "bin": {
     "workflow-search-catalog": "./bin/workflow-search-catalog.js"
   },
@@ -15,7 +16,10 @@
     "scripts/query_workflow_catalog.py"
   ],
   "scripts": {
-    "test": "python3 -m py_compile scripts/query_workflow_catalog.py && node bin/workflow-search-catalog.js \"healthcare referral packet\" --ecc --limit 1 >/tmp/workflow-search-catalog-smoke.md"
+    "test": "python3 -m py_compile scripts/query_workflow_catalog.py && node bin/workflow-search-catalog.js \"healthcare referral packet\" --ecc --limit 1 >/tmp/workflow-search-catalog-smoke.md",
+    "pack:dry-run": "npm pack --dry-run",
+    "release:check": "npm test && npm run pack:dry-run",
+    "prepublishOnly": "npm run release:check"
   },
   "keywords": [
     "codex",
@@ -34,6 +38,9 @@
   },
   "homepage": "https://github.com/Eys-55/workflow-search-catalog#readme",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=18"
   }
