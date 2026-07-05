@@ -16,12 +16,15 @@ Codex/ECC config-package references.
 ## Query Examples
 
 ```bash
-python3 scripts/query_workflow_catalog.py "healthcare referral packet"
-python3 scripts/query_workflow_catalog.py "education workflow"
-python3 scripts/query_workflow_catalog.py "real estate due diligence"
-python3 scripts/query_workflow_catalog.py "document processing human review"
-python3 scripts/query_workflow_catalog.py "Codex config package"
+python3 scripts/query_workflow_catalog.py "healthcare referral packet" --ecc --limit 7
+python3 scripts/query_workflow_catalog.py "education workflow" --ecc --limit 7
+python3 scripts/query_workflow_catalog.py "real estate due diligence" --ecc --limit 7
+python3 scripts/query_workflow_catalog.py "document processing human review" --ecc --limit 7
+python3 scripts/query_workflow_catalog.py "Codex config package" --ecc --limit 7
 ```
+
+Use `--json` with `--ecc` when another script needs both the normalized
+`ecc_contract` and ranked catalog matches.
 
 ## Quality Tiers
 
