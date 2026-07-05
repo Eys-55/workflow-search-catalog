@@ -1,0 +1,40 @@
+{
+  "name": "workflow-search-catalog",
+  "version": "0.1.0",
+  "description": "Search real-world workflow patterns and turn vague ideas into ECC mini-contracts.",
+  "bin": {
+    "workflow-search-catalog": "./bin/workflow-search-catalog.js"
+  },
+  "files": [
+    "bin/",
+    "data/workflow-search-index.json",
+    "data/workflow-search-index-by-domain.json",
+    "data/workflow-search-index.csv",
+    "LICENSE",
+    "reports/workflow-search-index.md",
+    "scripts/query_workflow_catalog.py"
+  ],
+  "scripts": {
+    "test": "python3 -m py_compile scripts/query_workflow_catalog.py && node bin/workflow-search-catalog.js \"healthcare referral packet\" --ecc --limit 1 >/tmp/workflow-search-catalog-smoke.md"
+  },
+  "keywords": [
+    "codex",
+    "ecc",
+    "workflow",
+    "agents",
+    "skills",
+    "catalog"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eys-55/workflow-search-catalog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Eys-55/workflow-search-catalog/issues"
+  },
+  "homepage": "https://github.com/Eys-55/workflow-search-catalog#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

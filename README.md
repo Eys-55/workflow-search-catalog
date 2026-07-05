@@ -3,6 +3,24 @@
 Standalone searchable catalog of real-world workflow patterns, source repos, and
 Codex/ECC config-package references.
 
+## Install / Run
+
+Run directly from GitHub:
+
+```bash
+npx github:Eys-55/workflow-search-catalog#codex/ecc-first-workflow-query-skill "healthcare referral packet" --ecc --limit 7
+```
+
+After npm publishing, the command becomes:
+
+```bash
+npx workflow-search-catalog "healthcare referral packet" --ecc --limit 7
+```
+
+The CLI requires Python 3 because the catalog search engine is Python-backed.
+Set `PYTHON=/path/to/python` if your Python executable is not `python3`,
+`python`, or `py -3`.
+
 ## What Is Here
 
 - `data/workflow-search-index.json` - clean 171-row searchable catalog.
@@ -16,11 +34,11 @@ Codex/ECC config-package references.
 ## Query Examples
 
 ```bash
-python3 scripts/query_workflow_catalog.py "healthcare referral packet" --ecc --limit 7
-python3 scripts/query_workflow_catalog.py "education workflow" --ecc --limit 7
-python3 scripts/query_workflow_catalog.py "real estate due diligence" --ecc --limit 7
-python3 scripts/query_workflow_catalog.py "document processing human review" --ecc --limit 7
-python3 scripts/query_workflow_catalog.py "Codex config package" --ecc --limit 7
+workflow-search-catalog "healthcare referral packet" --ecc --limit 7
+workflow-search-catalog "education workflow" --ecc --limit 7
+workflow-search-catalog "real estate due diligence" --ecc --limit 7
+workflow-search-catalog "document processing human review" --ecc --limit 7
+workflow-search-catalog "Codex config package" --ecc --limit 7
 ```
 
 Use `--json` with `--ecc` when another script needs both the normalized
